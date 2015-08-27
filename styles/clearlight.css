@@ -1,0 +1,104 @@
+/*
+CSS theme for Google code prettify ©William Robertson www.williamrobertson.net 2015
+*/
+ 
+/* Font + size in one place to allow <pre class="pln"> i.e. plain text with no prettifying to match prettified text */
+pre, code, .pln {
+   font-family: consolas, menlo, monospace;
+}
+
+pre.prettyprint, pre.pln, code.pln {
+   font-size: 85%;
+}
+
+.pln, .kwd, .tag, .pun {
+   color: #102051;
+}
+
+pre.prettyprint {
+   border: 1px solid #eee;
+   background-color: #f8f8f9;
+   padding: 1.3em 1.5em;
+   margin: 1em 0em 0em;
+}
+
+.lang-sql .kwd, .lang-sql .pln {
+   text-transform: lowercase;
+}
+
+pre.linenums, code.linenums {
+   padding: 0; /* Suppress prettyprint padding when in linenums style */ 
+}
+
+ol.linenums {
+   margin-bottom:0;
+   color: white;
+   margin-top:0;
+   background-color: #e0e0e2;
+}
+
+ol.linenums li {
+   background-image: none;
+   margin: 0;
+   padding: 0;
+}
+
+/* Great way to select even/odd lines, doesn't work in IE8 though. Maybe around 2020...
+ol.linenums li:nth-child(even) {
+   background-color: white;
+}
+ol.linenums li:nth-child(odd) {
+   background-color: #f0fff6;
+} */
+
+/* Even-numbered lines (line numbering styles start at 0) */
+li.l1, li.l3, li.l5, li.l7, li.l9 {
+   padding-left: .5em !important;
+   padding-right: 1em;
+   background-color: white;
+}
+
+/* Odd-numbered lines: */
+li.l0, li.l2, li.l4, li.l6, li.l8 {
+   padding-left: .5em !important;
+   padding-right: 1em;
+   background-color: #f0fff6;
+}
+
+.com {
+   color:#808090;
+   font-style: italic;
+}
+
+.opn,.clo {
+   color:#660;
+}
+
+.fun {
+   color: #008020;
+}
+
+.str,.atv {
+   color: #0099d7;
+}
+
+.lit {
+   color: #00a477;
+   text-transform: uppercase;
+}
+
+.kwd, .tag, .pun {
+   font-weight: bold;
+}
+
+.typ {
+   color: #1040b0;
+}
+
+.exc {
+   color: #a04;
+}
+
+.atn,.dec,.var {
+   color:#a4a;
+}

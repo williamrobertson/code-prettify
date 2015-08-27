@@ -35,3 +35,4 @@ PR.PR_SOURCE = 'src';
 PR.PR_STRING = 'str';
 PR.PR_TAG = 'tag';
 PR.PR_TYPE = 'typ';
+PR.PR_EXCEPTIONS = 'exc';
