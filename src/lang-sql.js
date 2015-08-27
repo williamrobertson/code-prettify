@@ -38,8 +38,7 @@ PR['registerLangHandler'](
          // Whitespace
          [PR['PR_PLAIN'],       /^[\t\n\r \xA0]+/, null, '\t\n\r \xA0'],
          // A double or single quoted, possibly multi-line, string.
-         [PR['PR_STRING'],      /^(?:"(?:[^\"\\]|\\.)*"|'(?:[^\'\\]|\\.)*')/, null,
-          '"\'']
+         [PR['PR_STRING'],      /^(?:"[^"]*"|'[^']*')/, null, '"\'']
         ],
         [
          // A comment is either a line comment that starts with two dashes, or
