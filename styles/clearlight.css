@@ -1,8 +1,4 @@
-/*
-CSS theme for Google code prettify ©William Robertson www.williamrobertson.net 2015
-*/
  
-/* Font + size in one place to allow <pre class="pln"> i.e. plain text with no prettifying to match prettified text */
 pre, code, .pln {
    font-family: consolas, menlo, monospace;
 }
@@ -43,7 +39,7 @@ ol.linenums li {
    padding: 0;
 }
 
-/* Great way to select even/odd lines, doesn't work in IE8 though. Maybe around 2020...
+/* Great way to select even/odd lines, doesn't work in IE8 though.
 ol.linenums li:nth-child(even) {
    background-color: white;
 }
@@ -51,14 +47,14 @@ ol.linenums li:nth-child(odd) {
    background-color: #f0fff6;
 } */
 
-/* Even-numbered lines (line numbering styles start at 0) */
+/* Even-numbered linenumbers (line numbering styles start at 0) */
 li.l1, li.l3, li.l5, li.l7, li.l9 {
    padding-left: .5em !important;
    padding-right: 1em;
    background-color: white;
 }
 
-/* Odd-numbered lines: */
+/* Odd-numbered linenumbers: */
 li.l0, li.l2, li.l4, li.l6, li.l8 {
    padding-left: .5em !important;
    padding-right: 1em;
