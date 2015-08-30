@@ -108,12 +108,11 @@ var prettyPrint;
       "instanceof,interface,null,native,package,strictfp,super,synchronized," +
       "throws,transient"];
   var CSHARP_KEYWORDS = [COMMON_KEYWORDS,
-      "abstract,add,alias,as,ascending,async,await,base,bool,by,byte,checked," +
-      "decimal,delegate,descending,dynamic,event,finally,fixed,foreach,from," +
-      "get,global,group,implicit,in,interface,internal,into,is,join,let,lock," +
-      "null,object,out,override,orderby,params,partial,readonly,ref,remove," +
-      "sbyte,sealed,select,set,stackalloc,string,uint,ulong,unchecked,unsafe," +
-      "ushort,value,var,virtual,where,yield"];
+      "abstract,as,base,bool,by,byte,checked,decimal,delegate,descending," +
+      "dynamic,event,finally,fixed,foreach,from,group,implicit,in,interface," +
+      "internal,into,is,let,lock,null,object,out,override,orderby,params," +
+      "partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong," +
+      "unchecked,unsafe,ushort,var,virtual,where"];
   var COFFEE_KEYWORDS = "all,and,by,catch,class,else,extends,false,finally," +
       "for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then," +
       "throw,true,try,unless,until,when,while,yes";
@@ -131,6 +130,9 @@ var prettyPrint;
       "def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo," +
       "rescue,retry,self,super,then,true,undef,unless,until,when,yield," +
       "BEGIN,END"];
+   var RUST_KEYWORDS = [FLOW_CONTROL_KEYWORDS, "as,assert,const,copy,drop," +
+      "enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv," +
+      "pub,pure,ref,self,static,struct,true,trait,type,unsafe,use"];
   var SH_KEYWORDS = [FLOW_CONTROL_KEYWORDS, "case,done,elif,esac,eval,fi," +
       "function,in,local,set,then,until"];
   var ALL_KEYWORDS = [
@@ -1367,6 +1369,11 @@ var prettyPrint;
           'tripleQuotedStrings': true,
           'regexLiterals': true
         }), ['coffee']);
+  registerLangHandler(sourceDecorator({
+          'keywords': RUST_KEYWORDS,
+          'cStyleComments': true,
+          'multilineStrings': true
+        }), ['rc', 'rs', 'rust']);
   registerLangHandler(
       createSimpleLexer([], [[PR_STRING, /^[\s\S]+/]]), ['regex']);
 

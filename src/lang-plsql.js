@@ -36,17 +36,21 @@
  *                  ("collect" on its own is a SQL function)
  * instr[bc24]?   - to include all the Unicode variants in one regexp.
  */
-
 PR['registerLangHandler'](
     PR['createSimpleLexer'](
         // Patterns that always start with a known character
         [
             // Whitespace
-            [PR['PR_PLAIN'],  /^[\t\n\r \xA0]+/, null, '\t\n\r \xA0']
+            [PR['PR_PLAIN'],  /^[\t\n\r \xA0]+/, null, '\t\n\r \xA0'],
+            // Simple character literal - single quotes enclosing anything other than a single quote,
+            // possibly multi-line:
+            [PR['PR_STRING'], /^'[^']*'/, null, "'"],
+            // Host variables - :bind or &sqlplus_substitution
+            [PR['PR_VARIABLE'], /^[:&][_a-z][\w-]*\.?/i, null, ':&']
         ],
         // Fallback patterns - no special start character
         [
-            // Character literal: single (not double) quoted, possibly multi-line, not escaped.
+            // Character literal: single-quoted, possibly multi-line, not escaped.
             // https://docs.oracle.com/database/121/SQLRF/sql_elements003.htm
             // Regex for q-quotes thanks to Chris Hunt
             // https://stackoverflow.com/questions/32255652/regex-to-match-quotes-like-qmikes-bike/32256546#32256546
@@ -64,8 +68,6 @@ PR['registerLangHandler'](
             [PR['PR_TYPE'], /^(?:[_a-z][\w\$#\.]*\s?%(row)?type|bfile|binary_double|binary_float|binary_integer|blob|boolean|char|clob|cursor|date|day|double\s+precision|dsinterval_unconstrained|float|identity|integer|interval|long|month|natural|nchar|nclob|number|numeric|nvarchar2|pls_integer|ref cursor|second|simple_integer|time|time zone|timestamp|urowid|varchar2|varying array|xml|year)(?=[^\w-]|$)/i, null ],
             // A named exception
             [PR['PR_EXCEPTION'], /^(?:access_into_null|case_not_found|collection_is_null|cursor_already_open|dup_val_on_index|invalid_cursor|invalid_number|login_denied|no_data_found|no_data_needed|not_logged_on|others|program_error|rowtype_mismatch|self_is_null|storage_error|subscript_beyond_count|subscript_outside_limit|sys_invalid_rowid|timeout_on_resource|too_many_rows|value_error|zero_divide)(?=[^\w-]|$)/i, null ],
-            // Host variables - :bind or &sqlplus_substitution
-            [PR['PR_VARIABLE'], /^[:&][_a-z][\w-]*\.?/i],
             // A numeric literal (decimal, scientific notation) - also including PL/SQL symbols TRUE and FALSE
             // (No hex outside quoted expressions)
             [PR['PR_LITERAL'], /^([+-]?(?:0x[\da-f]+|(?:\.\d+|\d+(?:\.\d*)?)(?:e[+-]?\d+)?)|TRUE|FALSE)/i],

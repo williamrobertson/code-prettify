@@ -21,11 +21,12 @@ PR.createSimpleLexer = function createSimpleLexer(
  */
 PR.sourceDecorator = function sourceDecorator(options) {};
 
-
 PR.PR_ATTRIB_NAME = 'atn';
 PR.PR_ATTRIB_VALUE = 'atv';
 PR.PR_COMMENT = 'com';
 PR.PR_DECLARATION = 'dec';
+PR.PR_EXCEPTION = 'exc';
+PR.PR_FUNCTION = 'fun';
 PR.PR_KEYWORD = 'kwd';
 PR.PR_LITERAL = 'lit';
 PR.PR_NOCODE = 'nocode';
@@ -35,4 +36,4 @@ PR.PR_SOURCE = 'src';
 PR.PR_STRING = 'str';
 PR.PR_TAG = 'tag';
 PR.PR_TYPE = 'typ';
-PR.PR_EXCEPTION = 'exc';
+PR.PR_VARIABLE = 'var';
