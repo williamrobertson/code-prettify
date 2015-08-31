@@ -67,7 +67,7 @@ distrib.tstamp: src/prettify.js src/run_prettify.js src/*.js src/*.css
 			    s/\bPR\.PR_COMMENT\b/"com"/g; \
 			    s/\bPR\.PR_DECLARATION\b/"dec"/g; \
 			    s/\bPR\.PR_EXCEPTION\b/"exc"/g; \
-			    s/\bPR\.PR_FUNCTION\b/"exc"/g; \
+			    s/\bPR\.PR_FUNCTION\b/"fun"/g; \
 			    s/\bPR\.PR_KEYWORD\b/"kwd"/g; \
 			    s/\bPR\.PR_LITERAL\b/"lit"/g; \
 			    s/\bPR\.PR_PLAIN\b/"pln"/g; \
