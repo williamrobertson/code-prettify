@@ -42,14 +42,14 @@ ol.linenums li {
 }
 
 /* Even-numbered linenumbers (line numbering styles start at 0) */
-ol.linenums li:nth-child(even),      /* For HTML5 and all modern browsers */
-li.l1, li.l3, li.l5, li.l7, li.l9 {  /* For IE8 etc */
+/* ol.linenums li:nth-child(even), */      /* For HTML5 and all modern browsers */
+li.L0, li.L2, li.L4, li.L6, li.L8 {
    background-color: white;
 }
 
 /* Odd-numbered linenumbers: */
-ol.linenums li:nth-child(odd),
-li.l0, li.l2, li.l4, li.l6, li.l8 {
+/* ol.linenums li:nth-child(odd), */
+li.L1, li.L3, li.L5, li.L7, li.L9 {
    background-color: #f0fff6;
 }
 
