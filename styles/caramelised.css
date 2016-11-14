@@ -1,28 +1,32 @@
 @import url("/css/code-base.css"); 
 
-.pln, .kwd, .tag, .pun, .nocode {
-   color: #102051;
+pre, .pln, .nocode {
+   color: #cbb094;
+}
+
+.kwd, .tag, .pun {
+   color: #da855c;
 }
 
 pre.prettyprint {
-   background-color: #f8f8f9;
+   background-color: #2d3539;
 }
 
 ol.linenums {
-   color: white;
-   background-color: #D4D4D9;
+   color: #434f55;
+   background-color: #22272a;
 }
 
 /* Even-numbered linenumbers (line numbering styles start at 0) */
 /* ol.linenums li:nth-child(even), */  /* For HTML5 and all modern browsers - will use when ie8 has gone away */
 li.L0, li.L2, li.L4, li.L6, li.L8 {
-   background-color: white;
+   background-color: #2d3539;
 }
 
 /* Odd-numbered linenumbers: */
 /* ol.linenums li:nth-child(odd), */
 li.L1, li.L3, li.L5, li.L7, li.L9 {
-   background-color: #f0fff6;
+   background-color: #2b3337
 }
 
 /* Great way to select even/odd lines, doesn't work in IE8 though.
@@ -34,7 +38,7 @@ ol.linenums li:nth-child(odd) {
 } */
 
 .com {
-   color:#808090;
+   color: #7f7f7f;
    font-style: italic;
 }
 
@@ -43,25 +47,26 @@ ol.linenums li:nth-child(odd) {
 }
 
 .fun {
-   color: #007065;
+   color: #bf6e78;
 }
 
 .str,.atv {
-   color: #0099d7;
+   color: #f09820;
+   background-color: #323c48;
 }
 
 .lit {
-   color: #00a477;
+   color: #f09820;
 }
 
 .typ {
-   color: #1040b0;
+   color: #d55820;
 }
 
 .exc {
-   color: #a04;
+   color: #ef4641;
 }
 
 .atn,.dec,.var {
-   color:#a4a;
+   color: #f09820;
 }

@@ -1,0 +1,50 @@
+/* Rules for code layout - define colours in separate sheet */
+/* www.williamrobertson.net 2016 */
+
+pre, code, .pln {
+   font-family: consolas, menlo, monospace;
+}
+
+pre.prettyprint, pre.pln, code.pln {
+   font-size: 85%;
+}
+
+pre.prettyprint {
+   border: 1px solid #eee;
+   padding: 1.3em 1.5em;
+   margin: 1em 0em 0em;
+}
+
+.lang-sql .kwd, .lang-sql .pln {
+   text-transform: lowercase;
+}
+
+pre.linenums, code.linenums {
+   padding: 0; /* Suppress prettyprint padding when in linenums style */ 
+}
+
+ol.linenums {
+   margin-bottom:0;
+   margin-top:0;
+}
+
+ol.linenums li {
+   padding-left: .5em !important;
+   padding-right: 1em;
+   background-image: none;
+   margin: 0;
+   padding: 0;
+}
+
+.com {
+   font-style: italic;
+}
+
+.lit {
+   text-transform: uppercase;
+}
+
+.kwd, .tag, .pun, .typ {
+   font-weight: bold;
+}
+
