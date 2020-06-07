@@ -1,12 +1,18 @@
 /* Rules for code layout - define colours in separate sheet */
-/* www.williamrobertson.net 2016 */
+/* www.williamrobertson.net 2016,2020 */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inconsolata:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
 
 pre, code, .pln {
-   font-family: consolas, menlo, monospace;
+   white-space: pre;
+   page-break-after: avoid;
+   font-style: normal;
+   font-family: "Fira Code", Consolas, Menlo, Inconolata, monospace;
+   font-variant-ligatures: normal;
+   color: rgba(89, 115, 153, 1);
 }
 
 pre.prettyprint, pre.pln, code.pln {
-   font-size: 85%;
+   font-size: 90%;
 }
 
 pre.prettyprint {
@@ -24,8 +30,8 @@ pre.linenums, code.linenums {
 }
 
 ol.linenums {
-   margin-bottom:0;
    margin-top:0;
+   margin-bottom:0;
 }
 
 ol.linenums li {
@@ -34,6 +40,10 @@ ol.linenums li {
    background-image: none;
    margin: 0;
    padding: 0;
+}
+
+pre ol > li:nth-child(1) {
+    padding-top: 1.5em;
 }
 
 .com {
